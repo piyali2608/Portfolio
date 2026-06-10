@@ -615,10 +615,26 @@ a, button { cursor: none !important; }
   .chatbot-container { right: 16px; bottom: 16px; }
   .mobile-nav-overlay .nav-link { font-size: 1.6rem !important; }
 
-  /* SAFELY REMOVE CUSTOM MOUSE CURSORS ON PHONE/MOBILE INTERFACES */
-  .cursor-dot, .cursor-ring, .cursor-spiral { display: none !important; }
-  html, body { cursor: auto !important; }
-  a, button { cursor: pointer !important; }
+  /* COMPLETELY ATOMIZE ALL CUSTOM MOUSE TRACKING CURSORS ON PHONES */
+  .cursor-dot, .cursor-ring, .cursor-spiral, [class^="cursor-"] { 
+    display: none !important; 
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* OVERRIDE ALL GLOBAL BLOCKS AND FORCE RECOVERY OF NATIVE PHONE BEHAVIOR */
+  *, *::before, *::after { 
+    cursor: auto !important; 
+  }
+  
+  html, body { 
+    cursor: auto !important; 
+  }
+  
+  a, button, input, textarea, select, .btn-primary, .btn-outline, .project-card, .flash-card, .nav-link, .nav-logo { 
+    cursor: pointer !important; 
+  }
 }
 
 
