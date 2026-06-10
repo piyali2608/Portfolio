@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Star, Code2, Layers, Brain, GitFork, ArrowUpRight } from 'lucide-react';
+import { Star, Code2, Layers, Brain, GitFork, ArrowUpRight } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 
 const FILTERS = ['All', 'Full Stack', 'AI/ML'];
@@ -37,14 +37,12 @@ const ProjectCard = ({ project, index }) => {
         boxShadow: '0 30px 60px rgba(0,0,0,0.3), 0 0 40px var(--glow)',
       }}
     >
-      {/* Top glow line on hover */}
       <div style={{
         position: 'absolute', top: 0, left: '15%', right: '15%', height: 1,
         background: 'linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent)',
         opacity: 0.4,
       }} />
 
-      {/* Header row */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
         <span style={{
           display: 'inline-flex', alignItems: 'center', gap: 5,
@@ -72,26 +70,22 @@ const ProjectCard = ({ project, index }) => {
         )}
       </div>
 
-      {/* Title */}
       <h3 style={{
         fontFamily: 'Syne, sans-serif', fontSize: '1.15rem', fontWeight: 700,
         color: 'var(--text-primary)', marginBottom: 10,
       }}>{project.title}</h3>
 
-      {/* Description */}
       <p style={{
         fontSize: '0.855rem', color: 'var(--text-secondary)',
         lineHeight: 1.75, marginBottom: 20, flex: 1,
       }}>{project.description}</p>
 
-      {/* Tech tags */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 22 }}>
         {project.tech.map(t => (
           <span key={t} className="tech-tag" style={{ fontSize: '0.7rem' }}>{t}</span>
         ))}
       </div>
 
-      {/* Links */}
       <div style={{ display: 'flex', gap: 10, marginTop: 'auto' }}>
         <a
           href={project.github}
@@ -136,12 +130,10 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
-
   const filtered = filter === 'All' ? projects : projects.filter(p => p.category === filter);
 
   return (
     <section className="section" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Nebula bg */}
       <div style={{
         position: 'absolute', width: 700, height: 700, borderRadius: '50%',
         background: 'radial-gradient(circle, var(--nebula-1) 0%, transparent 70%)',
@@ -156,7 +148,6 @@ const Projects = () => {
       }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -171,7 +162,6 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Filter + GitHub link */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -223,7 +213,6 @@ const Projects = () => {
           </a>
         </motion.div>
 
-        {/* Grid */}
         <motion.div
           layout
           style={{
@@ -239,7 +228,6 @@ const Projects = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
