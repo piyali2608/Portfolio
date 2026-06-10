@@ -1,21 +1,21 @@
-# 🌌 Cosmic Developer Portfolio
+#  Cosmic Developer Portfolio
 
 A premium, interactive developer portfolio built with **React**, **Framer Motion**, and a customized hardware-accelerated fluid design system. The application features a deep stellar-space ambient aesthetic alongside a high-fidelity iridescent nebula light profile.
 
 ---
 
-## 🚀 Stellar Features
+##  Stellar Features
 
-* **💨 Hardware-Accelerated Cosmic Smoke:** Features organic, flowing background smoke trails driven by custom SVG `feTurbulence` fractal noise layers mapping, optimized directly for GPU performance.
-* **🌀 Interactive Spiral Trailing Cursor:** An ultra-smooth, custom cursor trail mapping that dynamically adapts its blend profiles and color contrast between Deep Space (Dark Mode) and Iridescent Nebula (Light Mode).
-* **🔄 Anti-AI Flop Flashcards:** Clean, 3D perspective modules with precise structural backface-visibility protection preventing visual bleed during active transitions.
-* **🛠️ Minimalist Low-Profile UI Controls:** Refined custom actions and button systems designed to remove generic AI template looks in favor of modern, sleek layouts.
-* **🤖 Integrated Assistant Chatbot:** A contextual FAQ platform widget giving immediate interactions regarding project history and background metrics.
-* **📱 Universal Responsive Flow:** Fluid breakdowns constructed via dedicated media query wrappers allowing columns to break gracefully across all smartphone viewports.
+*  Hardware-Accelerated Cosmic Smoke:** Features organic, flowing background smoke trails driven by custom SVG `feTurbulence` fractal noise layers mapping, optimized directly for GPU performance.
+*  Interactive Spiral Trailing Cursor:** An ultra-smooth, custom cursor trail mapping that dynamically adapts its blend profiles and color contrast between Deep Space (Dark Mode) and Iridescent Nebula (Light Mode).
+*  Anti-AI Flop Flashcards:** Clean, 3D perspective modules with precise structural backface-visibility protection preventing visual bleed during active transitions.
+*  Minimalist Low-Profile UI Controls:** Refined custom actions and button systems designed to remove generic AI template looks in favor of modern, sleek layouts.
+*  Integrated Assistant Chatbot:** A contextual FAQ platform widget giving immediate interactions regarding project history and background metrics.
+*  Universal Responsive Flow:** Fluid breakdowns constructed via dedicated media query wrappers allowing columns to break gracefully across all smartphone viewports.
 
 ---
 
-## 🛠️ Project Architecture
+##  Project Architecture
 
 ```text
 src/
