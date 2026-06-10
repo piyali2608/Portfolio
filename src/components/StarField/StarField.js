@@ -34,10 +34,8 @@ const StarField = () => {
     };
     window.addEventListener('resize', resize);
 
-    let t = 0;
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
-      t += 0.01;
 
       stars.forEach(star => {
         star.twinkle += star.twinkleSpeed;

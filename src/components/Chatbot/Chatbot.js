@@ -46,7 +46,6 @@ const Chatbot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [emailMode, setEmailMode] = useState(false);
   const [emailForm, setEmailForm] = useState({ name: '', email: '', msg: '' });
-  const [emailSent, setEmailSent] = useState(false);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -72,7 +71,6 @@ const Chatbot = () => {
     e.preventDefault();
     const mailto = `mailto:${personalInfo.email}?subject=${encodeURIComponent('Message from Portfolio Chatbot')}&body=${encodeURIComponent(`From: ${emailForm.name} <${emailForm.email}>\n\n${emailForm.msg}`)}`;
     window.open(mailto, '_blank');
-    setEmailSent(true);
     setEmailMode(false);
     setMessages(prev => [...prev, {
       id: Date.now(),
@@ -80,7 +78,6 @@ const Chatbot = () => {
       text: `Your message has been queued to send to Piyali! She'll get back to you at ${emailForm.email} soon. 💌`,
     }]);
     setEmailForm({ name: '', email: '', msg: '' });
-    setTimeout(() => setEmailSent(false), 4000);
   };
 
   return (

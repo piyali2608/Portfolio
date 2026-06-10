@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { ArrowRight, Mail, Download, MapPin } from 'lucide-react';
+import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import { GitFork, Link2 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -18,7 +18,6 @@ const Hero = () => {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.9;
-      // Try with audio
       videoRef.current.muted = false;
       videoRef.current.volume = 0.5;
       videoRef.current.play().catch(() => {
@@ -35,7 +34,6 @@ const Hero = () => {
       minHeight: '100vh', display: 'flex', alignItems: 'center',
       paddingTop: 80, position: 'relative', overflow: 'hidden',
     }}>
-      {/* Nebula orbs */}
       <div style={{
         position: 'absolute', width: 800, height: 800, borderRadius: '50%',
         background: 'radial-gradient(circle, var(--nebula-1) 0%, transparent 65%)',
@@ -51,37 +49,33 @@ const Hero = () => {
 
       <div className="container" style={{ position: 'relative', zIndex: 1, width: '100%' }}>
         <div className="hero-layout">
-          {/* ========== LEFT: TEXT CONTENT ========== */}
           <div className="hero-text">
-            {/* Status badge */}
             <motion.div {...fadeUp(0.1)}>
               <div className="hero-badge">
                 <span className="dot" />
-            
+                Available for opportunities
               </div>
             </motion.div>
 
-            {/* Greeting */}
             <motion.p {...fadeUp(0.2)} style={{
               fontFamily: 'Space Mono, monospace',
               fontSize: '0.85rem', color: 'var(--accent-2)',
               letterSpacing: '0.12em', marginBottom: 12,
             }}>
-              Hello,Universe 
+              Hello, Universe 👋
             </motion.p>
 
-            {/* Name */}
             <motion.h1 {...fadeUp(0.3)} style={{
               fontSize: 'clamp(2.6rem, 6vw, 5.5rem)',
               fontWeight: 800, lineHeight: 1.0,
               marginBottom: 18, letterSpacing: '-0.03em',
             }}>
               I'm{' '}
-              <span className="gradient-text">Piyali Barman</span>
+              <span className="gradient-text">Piyali</span>
               <br />
+              <span style={{ color: 'var(--text-primary)' }}>Barman.</span>
             </motion.h1>
 
-            {/* Typing */}
             <motion.div {...fadeUp(0.4)} style={{
               display: 'flex', alignItems: 'center', gap: 8,
               marginBottom: 22, minHeight: 34,
@@ -95,7 +89,7 @@ const Hero = () => {
                   sequence={[
                     'Full Stack Developer', 2000,
                     'AI/ML Enthusiast', 2000,
-                    'React Developer', 2000,
+                    'React Engineer', 2000,
                     'PyTorch Practitioner', 2000,
                     'Creative Technologist', 2000,
                   ]}
@@ -105,7 +99,6 @@ const Hero = () => {
               </span>
             </motion.div>
 
-            {/* Bio */}
             <motion.p {...fadeUp(0.5)} style={{
               fontSize: '1.02rem', color: 'var(--text-secondary)',
               maxWidth: 500, lineHeight: 1.85, marginBottom: 36,
@@ -113,7 +106,6 @@ const Hero = () => {
               {personalInfo.bio}
             </motion.p>
 
-            {/* CTAs */}
             <motion.div {...fadeUp(0.6)} style={{
               display: 'flex', flexWrap: 'wrap', gap: 14, marginBottom: 44,
             }}>
@@ -127,7 +119,6 @@ const Hero = () => {
               </Link>
             </motion.div>
 
-            {/* Social + location */}
             <motion.div {...fadeUp(0.7)} style={{
               display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap',
             }}>
@@ -168,14 +159,12 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* ========== RIGHT: VIDEO ========== */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85, rotate: -4 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.1, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
             className="hero-video-wrap"
           >
-            {/* Outer orbit ring */}
             <div className="orbit-outer">
               {[0, 90, 180, 270].map(deg => (
                 <div key={deg} style={{
@@ -191,10 +180,8 @@ const Hero = () => {
               ))}
             </div>
 
-            {/* Inner orbit ring */}
             <div className="orbit-inner" />
 
-            {/* Video card — full aspect ratio 9:16 portrait */}
             <div className="hero-video-card">
               <video
                 ref={videoRef}
@@ -207,7 +194,6 @@ const Hero = () => {
                   objectFit: 'cover', display: 'block',
                 }}
               />
-              {/* Gradient overlay at bottom */}
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, right: 0, height: '30%',
                 background: 'linear-gradient(to top, rgba(6,6,15,0.7) 0%, transparent 100%)',
@@ -215,7 +201,6 @@ const Hero = () => {
               }} />
             </div>
 
-            {/* "Open to Work" tag */}
             <motion.div
               animate={{ y: [-5, 5, -5] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
@@ -234,7 +219,6 @@ const Hero = () => {
               </span>
             </motion.div>
 
-            {/* IIIT badge */}
             <motion.div
               animate={{ y: [5, -5, 5] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
@@ -249,13 +233,12 @@ const Hero = () => {
                 fontFamily: 'Space Mono, monospace', fontSize: '0.68rem',
                 color: 'var(--accent-2)', letterSpacing: '0.06em',
               }}>
-                🎓 IIIT CSE '29
+                🎓 Indian Institute of Information Technology, Sri City CSE '29
               </span>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Stats row */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, GitFork, Link2, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
@@ -25,11 +25,10 @@ const Contact = () => {
     setStatus('sending');
 
     try {
-      // Using EmailJS — replace with your service/template IDs
       const { default: emailjs } = await import('@emailjs/browser');
       await emailjs.send(
-        'YOUR_SERVICE_ID',      // replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID',     // replace with your EmailJS template ID
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
         {
           from_name: form.name,
           from_email: form.email,
@@ -37,13 +36,12 @@ const Contact = () => {
           message: form.message,
           to_email: personalInfo.email,
         },
-        'YOUR_PUBLIC_KEY'       // replace with your EmailJS public key
+        'YOUR_PUBLIC_KEY'
       );
       setStatus('success');
       setForm({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
       console.error('EmailJS error:', err);
-      // Fallback: open mailto
       const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(form.subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`;
       window.open(mailtoLink, '_blank');
       setStatus('success');
@@ -69,7 +67,6 @@ const Contact = () => {
       }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        {/* Header */}
         <motion.div {...fadeIn(0)} style={{ marginBottom: 60 }}>
           <div className="section-tag">
             <Mail size={12} /> Contact
@@ -87,7 +84,6 @@ const Contact = () => {
         }}
           className="contact-grid"
         >
-          {/* Left: Info */}
           <div>
             <motion.div {...fadeIn(0.1)} style={{
               padding: '28px',
@@ -150,7 +146,6 @@ const Contact = () => {
               ))}
             </motion.div>
 
-            {/* Availability card */}
             <motion.div {...fadeIn(0.2)} style={{
               padding: '20px 24px',
               background: 'linear-gradient(135deg, rgba(34,197,94,0.08) 0%, rgba(6,182,212,0.08) 100%)',
@@ -180,7 +175,6 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          {/* Right: Form */}
           <motion.div {...fadeIn(0.2)} style={{
             padding: '36px',
             background: 'var(--bg-card)',
@@ -255,7 +249,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Status messages */}
               {status === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -309,12 +302,6 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .contact-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 };
