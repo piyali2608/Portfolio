@@ -196,7 +196,7 @@ const Hero = () => {
               />
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, right: 0, height: '30%',
-                background: 'linear-gradient(to top, rgba(6,6,15,0.7) 0%, transparent 100%)',
+                background: 'linear-gradient(to top, rgb(6, 6, 15) 0%, transparent 100%)',
                 pointerEvents: 'none',
               }} />
             </div>
@@ -215,7 +215,7 @@ const Hero = () => {
                 fontFamily: 'Space Mono, monospace', fontSize: '0.68rem',
                 color: 'var(--accent)', letterSpacing: '0.06em',
               }}>
-                ✦ Open to Work
+                 Open to Work
               </span>
             </motion.div>
 
@@ -233,7 +233,7 @@ const Hero = () => {
                 fontFamily: 'Space Mono, monospace', fontSize: '0.68rem',
                 color: 'var(--accent-2)', letterSpacing: '0.06em',
               }}>
-                🎓 Indian Institute of Information Technology, Sri City CSE '29
+                 IIITS'29
               </span>
             </motion.div>
           </motion.div>

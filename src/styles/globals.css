@@ -614,6 +614,11 @@ a, button { cursor: none !important; }
   .chatbot-window { width: calc(100vw - 48px); right: 0; }
   .chatbot-container { right: 16px; bottom: 16px; }
   .mobile-nav-overlay .nav-link { font-size: 1.6rem !important; }
+
+  /* SAFELY REMOVE CUSTOM MOUSE CURSORS ON PHONE/MOBILE INTERFACES */
+  .cursor-dot, .cursor-ring, .cursor-spiral { display: none !important; }
+  html, body { cursor: auto !important; }
+  a, button { cursor: pointer !important; }
 }
 
 
